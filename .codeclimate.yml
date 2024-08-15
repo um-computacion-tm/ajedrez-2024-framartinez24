@@ -42,6 +42,7 @@ checks:
       threshold: #language-specific defaults. overrides affect all languages.
 
 exclude_patterns:
+- ".git"
 - "config/"
 - "db/"
 - "dist/"
