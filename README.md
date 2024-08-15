@@ -1,11 +1,12 @@
-# first-circleci-dqmdz-um
-first-circleci-dqmdz-um created by GitHub Classroom
+# README
+Franco Ajedrez Martinez 2024
 
 # CircleCI
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/um-computacion-tm/first-circleci-dqmdz-um/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/um-computacion-tm/first-circleci-dqmdz-um/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/um-computacion-tm/ajedrez-2024-framartinez24/tree/development.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/um-computacion-tm/ajedrez-2024-framartinez24/tree/development)
 
 # Maintainability
-[![Maintainability](https://api.codeclimate.com/v1/badges/9c414a712013b7e20317/maintainability)](https://codeclimate.com/github/um-computacion-tm/first-circleci-dqmdz-um/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/83c1d6d27af740c3a7f7/maintainability)](https://codeclimate.com/github/um-computacion-tm/ajedrez-2024-framartinez24/maintainability)
+
 
 # Test Coverage
-[![Test Coverage](https://api.codeclimate.com/v1/badges/9c414a712013b7e20317/test_coverage)](https://codeclimate.com/github/um-computacion-tm/first-circleci-dqmdz-um/test_coverage)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/83c1d6d27af740c3a7f7/test_coverage)](https://codeclimate.com/github/um-computacion-tm/ajedrez-2024-framartinez24/test_coverage)
