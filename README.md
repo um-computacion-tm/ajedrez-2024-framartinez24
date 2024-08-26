@@ -1,7 +1,6 @@
-# ¡Ajedrez!
-Bienvenido al Readme del proyecto Ajedrez UM | created by GitHub Classroom |
+# ¡Ajedrez en Python!
 
-Este proyecto está orientado a realizar una versión del famoso juego ajedrez, programado en python. ":)"
+Bienvenido, aquí encontrarás una versión del famoso juego ajedrez programada en python. 
 
 # CircleCI
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/um-computacion-tm/ajedrez-2024-framartinez24/tree/development.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/um-computacion-tm/ajedrez-2024-framartinez24/tree/development)
