@@ -14,6 +14,9 @@ The structure of the game is almost done, the board file will work as main, ther
 # Version 0.0.2.1 (26/8/24) 17:00 
 Added: All test.py for each piece of the game, there are only files without content.
 
+# Version 0.0.2.2 (26/8/24) 18:28 
+Modified: Board.py: Pieces import added, graphic grid guide for development purposes included, and initial piece positions on the board set.
+
  
 
 
