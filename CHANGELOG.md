@@ -10,6 +10,10 @@ Modified: Readme has been translated to english.
 Removed: old garbage files. (main.py and tests for settings only).
 The structure of the game is almost done, the board file will work as main, there must be all the pieces imported to be used into the game. 
 "This version is just the beginning, and it will grow over time."
+
+# Version 0.0.2.1 (26/8/24) 17:00 
+Added: All test.py for each piece of the game, there are only files without content.
+
  
 
 
