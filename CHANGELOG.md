@@ -17,6 +17,10 @@ Added: All test.py for each piece of the game, there are only files without cont
 # Version 0.0.2.2 (26/8/24) 18:28 
 Modified: Board.py: Pieces import added, graphic grid guide for development purposes included, and initial piece positions on the board set.
 
+# Version 0.0.2.3 (26/8/24) 19:30
+Modified: pawn.py:  2 functions added
+1: valid_moves: This function check if the movements to be done for the pawn are possible or not & check if there's an enemy piece to be taken. If the 2 conditions are valid (True) -> function move can be done.
+2: move: This function calls valid_moves and if the move is True, update the state of the col & row of the pawn and remove the enemy piece taken(if there is one).
  
 
 
