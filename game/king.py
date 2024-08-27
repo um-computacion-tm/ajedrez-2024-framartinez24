@@ -9,26 +9,20 @@ class King(Piece):
             return "♚"
 
 #I'm not explaining this again, king can step wherever he wants to, he is the king.
-def valid_moves(self, board, current_row, current_col):
+    def get_moves_king(self, board, from_row, from_col):
         moves = []
-        # Every direction for the KING
         directions = [(-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1), (-1, 1), (1, -1), (1, 1)]
-        for direction in directions:
-            new_row = current_row + direction[0]
-            new_col = current_col + direction[1]
-            if 0 <= new_row < 8 and 0 <= new_col < 8:
-                piece = board.get_piece(new_row, new_col)
-                if piece is None:
-                    moves.append((new_row, new_col))  
-                elif piece.color != self.color:
-                    moves.append((new_row, new_col))  
-        return moves
 
-def move(self, board, current_row, current_col, new_row, new_col):
-    # Checks valid movement 
-    if (new_row, new_col) in self.valid_moves(board, current_row, current_col):
-        board.set_piece(new_row, new_col, self)
-        board.remove_piece(current_row, current_col)
-        self.has_moved = True
-    else:
-        raise ValueError("Wrong or invalid movement")
+        for direction in directions:
+            r, c = from_row + direction[0], from_col + direction[1]
+            if 0 <= r < 8 and 0 <= c < 8:  # Checks board limits
+                piece = board.get_piece(r, c)
+                if piece is None:
+                    moves.append((r, c))  
+                elif piece.get_color() != self.get_color(): # != color, piece can be taken.
+                    moves.append((r, c))           
+            return moves
+    #bla bla same as always
+    def move(self,board, from_row, from_col, to_row, to_col):
+        board.set_piece(to_row, to_col, self)
+        board.remove_piece(from_row, from_col)

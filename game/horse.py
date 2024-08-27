@@ -8,27 +8,22 @@ class Horse(Piece):
         else:
             return "♞"
 
-def valid_moves(self, board, current_row, current_col):
+    def get_moves_horse(self, board, from_row, from_col):
         moves = []
-        # Horse move as "L"
-        potential_moves = [
-            (current_row - 2, current_col - 1), (current_row - 2, current_col + 1),
-            (current_row + 2, current_col - 1), (current_row + 2, current_col + 1),
-            (current_row - 1, current_col - 2), (current_row - 1, current_col + 2),
-            (current_row + 1, current_col - 2), (current_row + 1, current_col + 2)
-        ] #This patter forms an L movement for the horse piece.
+        #Remember the horse can "jump" on L
+        directions = [(-2, -1), (-2, 1), (2, -1), (2, 1), (-1, -2), (-1, 2), (1, -2), (1, 2)]
 
-        for new_row, new_col in potential_moves:
-            if 0 <= new_row < 8 and 0 <= new_col < 8:
-                piece = board.get_piece(new_row, new_col)
-                if piece is None or piece.color != self.color:
-                    moves.append((new_row, new_col))  # Empty slot or enemy eateable 
+        for direction in directions:
+            r, c = from_row + direction[0], from_col + direction[1]
+            if 0 <= r < 8 and 0 <= c < 8:  # Checks board limits
+                piece = board.get_piece(r, c)
+                if piece is None:
+                    moves.append((r, c)) 
+                elif piece.get_color() != self.get_color():
+                    moves.append((r, c))  # != color the piece can be taken
+
         return moves
-
-def move(self, board, current_row, current_col, new_row, new_col):
-    # Checks valid movement 
-    if (new_row, new_col) in self.valid_moves(board, current_row, current_col):
-        board.set_piece(new_row, new_col, self)
-        board.remove_piece(current_row, current_col)
-    else:
-        raise ValueError("Wrong or invalid movement")
+#Same as rook, as pawn, as bishop
+    def move(self,board, from_row, from_col, to_row, to_col):
+        board.set_piece(to_row, to_col, self)
+        board.remove_piece(from_row, from_col)
