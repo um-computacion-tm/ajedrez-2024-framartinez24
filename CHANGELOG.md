@@ -33,4 +33,9 @@ Modified: bishop.py basic features and logics are done. Similar to the other pie
 # Version 0.0.2.5 (26/8/24) 23:50 -King & queen on horses-
 Modified: queen.py, king.py and horse.py, basic logics and features added. 
 
+# Version 0.0.3 (27/8/24) 10:30 -Board visible on terminal-
+Modified: Board.py & cli.py Some bugs has been fixed and now the board can be printed on terminal correctly. Printing mode still very primitive... 
+To be done: The movements and features of some pieces does not work completely correctly.
+
+
 
