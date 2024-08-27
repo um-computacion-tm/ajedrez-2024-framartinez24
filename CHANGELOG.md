@@ -30,6 +30,7 @@ Modified: pawn.py:  2 functions added
  # Version 0.0.2.4 (26/8/24) 22:26 -Bishop functions-
 Modified: bishop.py basic features and logics are done. Similar to the other pieces but in diagonal. 
 
-
+# Version 0.0.2.5 (26/8/24) 23:50 -King & queen on horses-
+Modified: queen.py, king.py and horse.py, basic logics and features added. 
 
 
