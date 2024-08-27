@@ -2,6 +2,7 @@ from piece import Piece
 
 class Pawn(Piece):
     def __str__(self):
+        self.has_moved = False
         if self.__color__ == "WHITE":
             return "♙"
         else:
