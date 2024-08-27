@@ -37,5 +37,8 @@ Modified: queen.py, king.py and horse.py, basic logics and features added.
 Modified: Board.py & cli.py Some bugs has been fixed and now the board can be printed on terminal correctly. Printing mode still very primitive... 
 To be done: The movements and features of some pieces does not work completely correctly.
 
-
+# Version 0.0.3.1 (27/8/24) 11:10 -Refactoriced Pawn and chess-
+Modified: pawn.py was having some troubles with color settings and some problems to move forward and diagonally, now white as black pawn can move freely.
+Chess removed useless code and cli re-organtizated. 
+To be done: As pawn, the other pieces has to be refactoriced.
 
