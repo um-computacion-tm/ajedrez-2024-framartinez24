@@ -43,7 +43,8 @@ Modified: pawn.py
 There were some issues with the color settings and the ability to move forward and diagonally. These have now been resolved, and the white pawn can move freely.
 The Chess code has been streamlined and reorganized.
 
-# Version 0.0.3.2 (27/8/24) 14:05 -Rook on correctly color now-
+# Version 0.0.3.2 (27/8/24) 14:35 -Rook on correctly color now-
 Modified: rook.py
 An error was identified in the color settings. When the WHITE color was selected, the print returned a black rook.
 The issue has been resolved, and rook is now functioning correctly for the board and able to take other enemy pieces.
+
