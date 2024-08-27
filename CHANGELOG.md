@@ -48,3 +48,6 @@ Modified: rook.py
 An error was identified in the color settings. When the WHITE color was selected, the print returned a black rook.
 The issue has been resolved, and rook is now functioning correctly for the board and able to take other enemy pieces.
 
+# Version 0.0.3.3 (27/8/24) 15:25 -King & Queen-
+Modified: queen.py & king.py 
+The queen and king have undergone a refactoring process, enabling them to move in accordance with the desired specifications. However, there are still aspects that require attention. Currently, many pieces are capable of moving to any location without restriction or engaging in illegal movements.
