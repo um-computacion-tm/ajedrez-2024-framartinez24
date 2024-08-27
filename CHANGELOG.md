@@ -54,4 +54,10 @@ The queen and king have undergone a refactoring process, enabling them to move i
 
 # Version 0.0.3.3 (27/8/24) 20:00 -Move def added as class-
 Modified: all pieces. 
+Added: class MoveLogic
 Each component has undergone a process of refactoring. The block of code responsible for performing all the moves has been modified and refactored to utilize a class. This approach reduces the amount of repeated code and enhances the overall reliability of the program.
+
+# Version 0.0.3.4 (27/8/24) 20:50 -King & Horse logic class-
+Modified: horse.py king.py
+Add: class Movement & class direction
+The block code utilized for both horse and king movements is analogous. This block has undergone a refactoring process and has been imported as a class.
