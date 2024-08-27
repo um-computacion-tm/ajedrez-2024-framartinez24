@@ -51,3 +51,7 @@ The issue has been resolved, and rook is now functioning correctly for the board
 # Version 0.0.3.3 (27/8/24) 15:25 -King & Queen-
 Modified: queen.py & king.py 
 The queen and king have undergone a refactoring process, enabling them to move in accordance with the desired specifications. However, there are still aspects that require attention. Currently, many pieces are capable of moving to any location without restriction or engaging in illegal movements.
+
+# Version 0.0.3.3 (27/8/24) 20:00 -Move def added as class-
+Modified: all pieces. 
+Each component has undergone a process of refactoring. The block of code responsible for performing all the moves has been modified and refactored to utilize a class. This approach reduces the amount of repeated code and enhances the overall reliability of the program.

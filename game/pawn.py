@@ -1,5 +1,5 @@
 from piece import Piece
-
+from function import MoveLogic
 
 class Pawn(Piece):
 
@@ -38,9 +38,5 @@ class Pawn(Piece):
     ## Move pawn and update state and position...     
        #new row and new col is where the pawn is going to move if all the conditions of valid movements are true.
     def move(self, board, from_row, from_col, to_row, to_col):
-       #Update where the pawn currently is.
-        board.set_piece(to_row, to_col, self)
-       #Removes the piece murdered by the pawn 
-        board.remove_piece(from_row, from_col)
-
-#exception gone
+        MoveLogic.move(board, from_row, from_col, to_row, to_col, self)
+    #Testing def as class.
