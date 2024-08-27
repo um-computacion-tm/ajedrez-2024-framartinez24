@@ -27,7 +27,7 @@ Modified: pawn.py:  2 functions added
  Rook.py basic features and logics are done, it's similar to pawn but adding some exceptions and some states to do "castling", which is a move only can be made for rook.
 
  
- # Version 0.0.2.4 (26/8/24) 21:46 -Bishop functions-
+ # Version 0.0.2.4 (26/8/24) 22:26 -Bishop functions-
 Modified: bishop.py basic features and logics are done. Similar to the other pieces but in diagonal. 
 
 
