@@ -61,3 +61,7 @@ Each component has undergone a process of refactoring. The block of code respons
 Modified: horse.py king.py
 Add: class Movement & class direction
 The block code utilized for both horse and king movements is analogous. This block has undergone a refactoring process and has been imported as a class.
+
+# Version 0.0.3.4 (27/8/24) 21:30 -Pawn complexity reduction-
+Modified: pawn.py
+The pawn presented some issues with regard to the complexity code, which have now been resolved. It will be incorporated into the class form in subsequent versions.
