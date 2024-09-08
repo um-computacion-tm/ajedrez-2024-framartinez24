@@ -6,7 +6,6 @@ from game.function import MoveLogic
 class TestBishop(unittest.TestCase):
 
     def setUp(self):
-        """Configuración para los tests"""
         self.board = [[None for _ in range(8)] for _ in range(8)]  
         self.white_bishop = Bishop("WHITE")
         self.black_bishop = Bishop("BLACK")
