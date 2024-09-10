@@ -1,67 +1,93 @@
-## CHANGELOG
-# Version 0.0.1.0 (26/8/24) -Choosing color-
-A new file, piece.py, has been added to the program. This file provides a function, "get_color," for each piece. The remaining pieces were previously added to the program, but no changes have been made to them yet. The game is not yet playable, and some pieces are missing.
+## [0.0.1.0] - 26|08|2024
+### Added
+- A new file, `piece.py`, has been added, providing the `get_color` function for each piece.
+- Previous pieces remain unchanged.
+- The game is not yet playable, and some pieces are missing.
 
-# Version 0.0.2 (26/8/24) -Party friends-
-The following pieces have been added to the game: bishop, horse, king, queen, and rook. Each piece has been assigned a color (white or black) using the method described in the readme file.
-Modifications: The readme file has been translated into English.
-Removals: The old, superfluous files (main.py and tests for settings) have been removed.
-The structure of the game is almost complete. The board file will serve as the main file, and all pieces must be imported for use in the game.
+## [0.0.2] - 26|08|2024
+### Added
+- `Bishop`, `Horse`, `King`, `Queen`, and `Rook` pieces have been added.
+- Each piece has been assigned a color (white or black) as described in the readme.
+- Translated the readme file to English.
+### Removed
+- Old files `main.py` and settings tests.
 
-# Version 0.0.2.1 (26/8/24) 17:00 -Test Structure-
-Added: All test.py files for each component of the game are devoid of content.
+## [0.0.2.1] - 26|08|2024 17:00
+### Added
+- Created empty `test.py` files for each game component.
 
-# Version 0.0.2.2 (26/8/24) 18:28 -Guides and initial settings-
-Modified: Board.py 
-In the board.py file, the pieces have been imported, a graphic grid guide has been added for development purposes, and the initial positions of the pieces on the board have been set.
+## [0.0.2.2] - 26|08|2024 18:28
+### Modified
+- `Board.py` now imports pieces and includes a graphical grid guide for development.
+- Initial positions of pieces are set on the board.
 
-# Version 0.0.2.3 (26/8/24) 19:30 -Pawn functions-
-Modified: The pawn.py 
-Has been augmented with two new functions. The first is valid_moves. This function determines the feasibility of the proposed pawn movements and identifies potential opportunities for capturing enemy pieces. If both conditions are met, the move can be executed.
-2: move: This function calls valid_moves and, if the move is valid, updates the pawn's column and row coordinates and removes any captured enemy pieces.
- 
- # Version 0.0.2.4 (26/8/24) 21:46 -Rook functions-
- Modified: Pawn.py 
- A missing line was added to validate whether the piece has been moved or not. The fundamental characteristics and operational logic of Rook.py have been established. It is comparable to Pawn, but with the incorporation of exceptions and states for "castling," a maneuver exclusive to Rook.
+## [0.0.2.3] - 26|08|2024 19:30
+### Modified
+- `Pawn.py` has been enhanced with two new functions:
+  - `valid_moves`: Determines pawn movement validity and identifies potential enemy captures.
+  - `move`: Calls `valid_moves` to update pawn's coordinates and removes captured pieces.
 
- 
- # Version 0.0.2.4 (26/8/24) 22:26 -Bishop functions-
-Modified: bishop.py
-The fundamental characteristics and underlying logic of the Bishop.py program have been completed. Its design is analogous to that of the other components, but with a diagonal orientation. 
+## [0.0.2.4] - 26|08|2024 21:46
+### Modified
+- Added validation in `Pawn.py` to check if the piece has moved.
+- Established `Rook.py` with logic similar to `Pawn`, including castling logic and exceptions.
 
-# Version 0.0.2.5 (26/8/24) 23:50 -King & queen on horses-
-Modified: queen.py, king.py, and horse.py 
-Have been enhanced with additional fundamental logic and functionalities. 
+## [0.0.2.4] - 26|08|2024 22:26
+### Modified
+- Completed basic logic for `Bishop.py`, featuring diagonal movements similar to other pieces.
 
-# Version 0.0.3 (27/8/24) 10:30 -Board visible on terminal-
-Modified: Board.py & cli.py 
-The software has been updated to address some of the bugs that were previously affecting the printing functionality on the terminal. However, it is important to note that the printing mode is still in its infancy and has significant limitations.
-Further improvements are necessary to ensure that the movements and features of all pieces are fully operational.
+## [0.0.2.5] - 26|08|2024 23:50
+### Modified
+- `Queen.py`, `King.py`, and `Horse.py` were enhanced with additional logic and functionalities.
 
-# Version 0.0.3.1 (27/8/24) 11:10 -Refactoriced Pawn and chess-
-Modified: pawn.py 
-There were some issues with the color settings and the ability to move forward and diagonally. These have now been resolved, and the white pawn can move freely.
-The Chess code has been streamlined and reorganized.
+## [0.0.3] - 27|08|2024 10:30
+### Modified
+- Updated `Board.py` and `cli.py` to fix bugs related to terminal printing.
+- Printing functionality still needs further development.
 
-# Version 0.0.3.2 (27/8/24) 14:35 -Rook on correctly color now-
-Modified: rook.py
-An error was identified in the color settings. When the WHITE color was selected, the print returned a black rook.
-The issue has been resolved, and rook is now functioning correctly for the board and able to take other enemy pieces.
+## [0.0.3.1] - 27|08|2024 11:10
+### Modified
+- Fixed issues in `pawn.py` with color settings and diagonal movement.
+- Streamlined and reorganized `Chess` code.
 
-# Version 0.0.3.3 (27/8/24) 15:25 -King & Queen-
-Modified: queen.py & king.py 
-The queen and king have undergone a refactoring process, enabling them to move in accordance with the desired specifications. However, there are still aspects that require attention. Currently, many pieces are capable of moving to any location without restriction or engaging in illegal movements.
+## [0.0.3.2] - 27|08|2024 14:35
+### Modified
+- Fixed `rook.py` color issue where a white rook was printing as black.
 
-# Version 0.0.3.3 (27/8/24) 20:00 -Move def added as class-
-Modified: all pieces. 
-Added: class MoveLogic
-Each component has undergone a process of refactoring. The block of code responsible for performing all the moves has been modified and refactored to utilize a class. This approach reduces the amount of repeated code and enhances the overall reliability of the program.
+## [0.0.3.3] - 27|08|2024 15:25
+### Modified
+- Refactored `Queen.py` and `King.py` to ensure correct movement, though some issues with unrestricted movement remain.
 
-# Version 0.0.3.4 (27/8/24) 20:50 -King & Horse logic class-
-Modified: horse.py king.py
-Add: class Movement & class direction
-The block code utilized for both horse and king movements is analogous. This block has undergone a refactoring process and has been imported as a class.
+## [0.0.3.3] - 27|08|2024 20:00
+### Added
+- Refactored movement logic for all pieces by adding `class MoveLogic` to reduce redundancy and improve reliability.
 
-# Version 0.0.3.4 (27/8/24) 21:30 -Pawn complexity reduction-
-Modified: pawn.py
-The pawn presented some issues with regard to the complexity code, which have now been resolved. It will be incorporated into the class form in subsequent versions.
+## [0.0.3.4] - 27|08|2024 20:50
+### Added
+- Refactored `Horse.py` and `King.py` by adding `class Movement` and `class Direction` to handle movement logic for both pieces.
+
+## [0.0.3.4] - 27|08|2024 21:30
+### Modified
+- Simplified complexity in `pawn.py` and prepared for integration into class form in future versions.
+
+## [0.0.3.5] - 5|09|2024 
+### Added 
+- `pawn_test` added. 
+
+## [0.0.3.6] - 6|09|2024 
+### Added 
+- `rook_test` added. 
+
+## [0.0.3.7] - 7|09|2024 
+### Added 
+- `horse_test` added. 
+
+## [0.0.3.5] - 8|09|2024 
+### Added 
+- `bishop_test` added. 
+
+## [0.0.3.5] - 10|09|2024 
+### Added 
+- `queen_test` added. 
+### Modified
+- Changelog.md refactoriced and simplified.
