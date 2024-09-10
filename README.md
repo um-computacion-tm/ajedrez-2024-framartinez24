@@ -1,4 +1,5 @@
-# ¡Ajedrez en Python!
+# Python Chess
+Author: Franco Martínez | 60111
 
 Welcome! Here you'll find the amazing project python-chess! Enjoy!
 
