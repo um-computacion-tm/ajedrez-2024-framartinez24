@@ -22,5 +22,15 @@ def play(chess):
     except Exception as e:
         print("error", e)
 
+def give_up(chess):
+    asnwer = input("Player " + chess.turn + "Giving up ah? (y/n)").lower()
+    if respuesta == "y":
+        print(f"Player Chicken {chess.turn} gave up")
+        chess.end_game() 
+        return
+
+
+
+
 if __name__ == '__main__':
     main()
