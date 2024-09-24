@@ -31,5 +31,11 @@ class Chess:
             self.__turn__ = "BLACK"
         else:
             self.__turn__ = "WHITE"
+            
+    def set_turn(self, turn):
+       if turn in ["WHITE", "BLACK"]:
+           self.__turn__ = turn
+       else:
+           raise ValueError("Must be white or black!")
 
 
