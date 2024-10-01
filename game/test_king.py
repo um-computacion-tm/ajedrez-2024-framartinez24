@@ -1,7 +1,7 @@
 import unittest
-from game.king import King
-from game.piece import Piece
-from game.function import MoveLogic, Movement
+from king import King
+from piece import Piece
+from function import MoveLogic, Movement
 
 class TestKing(unittest.TestCase):
 

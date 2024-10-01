@@ -1,7 +1,7 @@
 import unittest
-from game.horse import Horse
-from game.piece import Piece
-from game.function import MoveLogic, Movement
+from horse import Horse
+from piece import Piece
+from function import MoveLogic, Movement
 
 class TestHorse(unittest.TestCase):
 

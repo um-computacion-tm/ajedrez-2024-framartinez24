@@ -1,7 +1,7 @@
 import unittest
-from game.pawn import Pawn
-from game.piece import Piece
-from game.function import MoveLogic
+from pawn import Pawn
+from piece import Piece
+from function import MoveLogic
 
 class TestPawn(unittest.TestCase):
 

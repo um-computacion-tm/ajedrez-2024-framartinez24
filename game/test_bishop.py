@@ -1,7 +1,7 @@
 import unittest
-from game.bishop import Bishop
-from game.piece import Piece
-from game.function import MoveLogic
+from bishop import Bishop
+from piece import Piece
+from function import MoveLogic
 
 class TestBishop(unittest.TestCase):
 
