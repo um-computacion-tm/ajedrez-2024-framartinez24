@@ -31,11 +31,5 @@ class Bishop(Piece):
                     break  # Out of the board limits
         return moves
 
-
-#Same as pawn as rook... 
-    # def move(self, board, from_row, from_col, to_row, to_col):
-    #     board.set_piece(to_row, to_col, self)
-    #     board.remove_piece(from_row, from_col)
-    
     def move(self, board, from_row, from_col, to_row, to_col):
             MoveLogic.move(board, from_row, from_col, to_row, to_col, self)

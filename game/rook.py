@@ -29,10 +29,6 @@ class Rook(Piece):
                     break  # Out of board limits.
 
         return moves
-
-#As pawn, def move... this can be done as apart class and use POO but for now I will repeat the code.
-    # def move(self, board, from_row, from_col, to_row, to_col):
-    #     board.set_piece(to_row, to_col, self)
-    #     board.remove_piece(from_row, from_col)
+    
     def move(self, board, from_row, from_col, to_row, to_col):
         MoveLogic.move(board, from_row, from_col, to_row, to_col, self)

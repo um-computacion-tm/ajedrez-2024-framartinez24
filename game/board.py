@@ -68,4 +68,3 @@ class Board:
     def remove_piece(self, row, col): # remove_piece(row, col): Removes the piece at the specified row and column.
         self.__positions__[row][col] = None
     
-

@@ -12,7 +12,6 @@ def play(chess):
         from_col = int(input("From Col ↓: "))
         to_row = int(input("To Row →: "))
         to_col = int(input("To Col ↓: "))
-        # :)
         chess.move(
             from_row,
             from_col,
@@ -23,14 +22,11 @@ def play(chess):
         print("error", e)
 
 def give_up(chess):
-    asnwer = input("Player " + chess.turn + "Giving up ah? (y/n)").lower()
-    if respuesta == "y":
+    answer = input("Player " + chess.turn + "Giving up ah? (y/n)").lower()
+    if answer == "y":
         print(f"Player Chicken {chess.turn} gave up")
         chess.end_game() 
         return
-
-
-
 
 if __name__ == '__main__':
     main()
