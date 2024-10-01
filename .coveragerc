@@ -1,5 +1,5 @@
 [run]
-source = development
+source = develop
 omit =
     venv/*
     */test/*
