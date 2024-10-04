@@ -1,6 +1,6 @@
-from piece import Piece
-from function import MoveLogic
-from function import Movement
+from game.piece import Piece
+from game.function import MoveLogic
+from game.function import Movement
 
 class Horse(Piece):
 

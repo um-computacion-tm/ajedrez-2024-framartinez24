@@ -1,6 +1,6 @@
-from piece import Piece
-from function import MoveLogic
-from function import Movement
+from game.piece import Piece
+from game.function import MoveLogic, Movement
+
 class King(Piece):
     def __str__(self):
         #self.has_moved = False

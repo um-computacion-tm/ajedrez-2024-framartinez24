@@ -1,7 +1,7 @@
 import unittest
-from queen import Queen
-from piece import Piece
-from function import MoveLogic
+from game.queen import Queen
+from game.piece import Piece
+from game.function import MoveLogic
 
 class TestQueen(unittest.TestCase):
 

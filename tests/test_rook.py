@@ -1,7 +1,7 @@
 import unittest
-from piece import Piece
-from rook import Rook
-from function import MoveLogic
+from game.piece import Piece
+from game.rook import Rook
+from game.function import MoveLogic
 
 class TestRook(unittest.TestCase):
 

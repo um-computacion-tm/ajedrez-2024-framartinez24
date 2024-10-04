@@ -1,11 +1,11 @@
 import unittest
-from board import Board
-from rook import Rook
-from horse import Horse
-from bishop import Bishop
-from queen import Queen
-from king import King
-from pawn import Pawn
+from game.board import Board
+from game.rook import Rook
+from game.horse import Horse
+from game.bishop import Bishop
+from game.queen import Queen
+from game.king import King
+from game.pawn import Pawn
 
 class TestBoard(unittest.TestCase):
     def setUp(self):

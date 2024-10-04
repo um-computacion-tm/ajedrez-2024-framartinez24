@@ -1,16 +1,17 @@
 import unittest
-from bishop import Bishop
-from piece import Piece
-from function import MoveLogic
+from game.bishop import Bishop
+from game.piece import Piece
+from game.function import MoveLogic
+from game.board import Board
 
 class TestBishop(unittest.TestCase):
 
     def setUp(self):
-        self.board = [[None for _ in range(8)] for _ in range(8)] 
+        self.board = Board(test=True) 
         self.white_bishop = Bishop("WHITE")
         self.black_bishop = Bishop("BLACK")
-        self.board[0][2] = self.white_bishop  
-        self.board[7][5] = self.black_bishop  
+        self.board.__positions__[0][2] = self.white_bishop  
+        self.board.__positions__[7][5] = self.black_bishop  
 
     def test_bishop_str_white(self):
         self.assertEqual(str(self.white_bishop), "♗")
@@ -32,19 +33,20 @@ class TestBishop(unittest.TestCase):
         from_row, from_col = 0, 2
         to_row, to_col = 3, 5
         self.white_bishop.move(self.board, from_row, from_col, to_row, to_col)
-        self.assertIsNone(self.board[from_row][from_col])  
-        self.assertEqual(self.board[to_row][to_col], self.white_bishop)  
+        self.assertIsNone(self.board.__positions__[from_row][from_col])  
+        self.assertEqual(self.board.__positions__[to_row][to_col], self.white_bishop)  
 
     def test_bishop_move_black_valid(self):
         from_row, from_col = 7, 5
         to_row, to_col = 4, 2
         self.black_bishop.move(self.board, from_row, from_col, to_row, to_col)
-        self.assertIsNone(self.board[from_row][from_col])  
-        self.assertEqual(self.board[to_row][to_col], self.black_bishop)  
+        self.assertIsNone(self.board.__positions__[from_row][from_col])  
+        self.assertEqual(self.board.__positions__[to_row][to_col], self.black_bishop)  
 
     def test_bishop_invalid_move(self):
         from_row, from_col = 0, 2
-        to_row, to_col = 2, 2  
+        to_row, to_col = 2, 2
+        # Este test falla porque nunca se lanza una excepción 
         with self.assertRaises(Exception): 
             self.white_bishop.move(self.board, from_row, from_col, to_row, to_col)
 

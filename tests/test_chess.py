@@ -1,6 +1,6 @@
 import unittest
-from board import Board
-from chess import Chess
+from game.board import Board
+from game.chess import Chess
 
 class ChessTest(unittest.TestCase):
     def setUp(self):

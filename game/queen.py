@@ -1,5 +1,5 @@
-from piece import Piece
-from function import MoveLogic
+from game.piece import Piece
+from game.function import MoveLogic
 
 class Queen(Piece):
     def __str__(self):
