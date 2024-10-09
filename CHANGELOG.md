@@ -91,3 +91,9 @@
 - `queen_test` added. 
 ### Modified
 - Changelog.md refactoriced and simplified.
+
+## [0.0.4.0] - 9|10|2024 
+### Modified
+- Many changes were made, in order to synthesize the code and improve robustness. The code was refactored following OOP guidelines. Still in progress. The tests have not been uploaded but are already mostly operational.
+### Comments 
+- Board.py, chess.py, cli.py must be entirely re-writen, function.py will be removed asap.

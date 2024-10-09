@@ -2,6 +2,7 @@
 Author: Franco Martínez | 60111
 
 Welcome! Here you'll find the amazing project python-chess! Enjoy!
+Still in progress
 
 # CircleCI
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/um-computacion-tm/ajedrez-2024-framartinez24/tree/development.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/um-computacion-tm/ajedrez-2024-framartinez24/tree/development)
