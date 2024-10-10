@@ -47,14 +47,16 @@ class Board:
                 self.__positions__[6][i] = Pawn("WHITE")
 
     def __str__(self):
-        board_str = "" 
-        for row in self.__positions__:
+        board_str = "  0 1 2 3 4 5 6 7\n"  
+        for i, row in enumerate(self.__positions__):
+            board_str += str(i) + " "  
             for cell in row:
                 if cell is not None:
-                    board_str += str(cell)    # If a piece exists, it converts the piece object to a string
+                    board_str += str(cell) + " " # If a piece exists, it converts the piece object to a string
                 else:
                     board_str += " "  
-            board_str += "\n"   
+            board_str += str(i) + "\n" 
+        board_str += "  0 1 2 3 4 5 6 7\n"
         return board_str
     
     def get_size(self): # get_size(): Returns the size of the chessboard (8x8).
@@ -69,3 +71,15 @@ class Board:
     def remove_piece(self, row, col): # remove_piece(row, col): Removes the piece at the specified row and column.
         self.__positions__[row][col] = None
     
+    def perfom_move(self, from_row, from_col, to_row, to_col):
+        piece = self.get_piece(from_row, from_col)
+        if piece is None:
+            raise ValueError("Missing piece")
+        piece_kind = piece.__class__.__name__.upper() 
+        if isinstance(piece, Pawn):  
+            moved_piece = piece.pawn_move(self, from_row, from_col, to_row, to_col)
+        else:
+            moved_piece = piece.move_piece(self, from_row, from_col, to_row, to_col)
+        if moved_piece is None:
+            raise ValueError(f"Invalid movement for: {piece_kind }")
+        return moved_piece
