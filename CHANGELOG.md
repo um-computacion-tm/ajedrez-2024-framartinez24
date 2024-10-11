@@ -97,3 +97,6 @@
 - Many changes were made, in order to synthesize the code and improve robustness. The code was refactored following OOP guidelines. Still in progress. The tests have not been uploaded but are already mostly operational.
 ### Comments 
 - Board.py, chess.py, cli.py must be entirely re-writen, function.py will be removed asap.
+
+
+voy a escribir acá como evidencia de que no estoy loco, ayer hice board y lo pushie pero ahora desde otra pc hago el pull y no aparece, pero en la otra computadora me dice working tree clean, no sé si estaré perdiendo la batalla contra la sanidad, voy a pushear pawn y board lo buscaré mañana en la otra pc porque no pienso rehacerlo. 
