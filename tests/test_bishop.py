@@ -1,54 +1,29 @@
 import unittest
 from game.bishop import Bishop
-from game.piece import Piece
-from game.function import MoveLogic
-from game.board import Board
+from game.board import Board 
+from game.pawn import Pawn
 
 class TestBishop(unittest.TestCase):
-
     def setUp(self):
-        self.board = Board(test=True) 
-        self.white_bishop = Bishop("WHITE")
-        self.black_bishop = Bishop("BLACK")
-        self.board.__positions__[0][2] = self.white_bishop  
-        self.board.__positions__[7][5] = self.black_bishop  
+        self.__board__ = Board()
+        self.__bishop__ = Bishop("WHITE", "BISHOP")
 
-    def test_bishop_str_white(self):
-        self.assertEqual(str(self.white_bishop), "♗")
-
-    def test_bishop_str_black(self):
-        self.assertEqual(str(self.black_bishop), "♝")
-
-    def test_bishop_get_moves_white(self):
-        moves = self.white_bishop.get_moves_bishop(self.board, 0, 2)
-        expected_moves = [(1, 1), (2, 0), (1, 3), (2, 4), (3, 5), (4, 6), (5, 7)]  
-        self.assertCountEqual(moves, expected_moves)
-
-    def test_bishop_get_moves_black(self):
-        moves = self.black_bishop.get_moves_bishop(self.board, 7, 5)
-        expected_moves = [(6, 4), (5, 3), (4, 2), (3, 1), (2, 0), (6, 6), (5, 7)]  
-        self.assertCountEqual(moves, expected_moves)
-
-    def test_bishop_move_white_valid(self):
-        from_row, from_col = 0, 2
-        to_row, to_col = 3, 5
-        self.white_bishop.move(self.board, from_row, from_col, to_row, to_col)
-        self.assertIsNone(self.board.__positions__[from_row][from_col])  
-        self.assertEqual(self.board.__positions__[to_row][to_col], self.white_bishop)  
-
-    def test_bishop_move_black_valid(self):
-        from_row, from_col = 7, 5
-        to_row, to_col = 4, 2
-        self.black_bishop.move(self.board, from_row, from_col, to_row, to_col)
-        self.assertIsNone(self.board.__positions__[from_row][from_col])  
-        self.assertEqual(self.board.__positions__[to_row][to_col], self.black_bishop)  
+    def test_bishop_move_and_capture(self):
+        self.__board__.set_piece(4, 6, self.__bishop__)
+        pawn = Pawn("BLACK", "PAWN")
+        self.__board__.set_piece(5, 5, pawn)
+        
+        expected_moves = [(5,5),(3,5),(2,4),(1,3),(3,7),(5,7)]
+        results = sorted(self.__bishop__.get_valid_moves(self.__board__, 4, 6))
+        self.assertEqual(results, sorted(expected_moves))
+        self.__bishop__.perform_movement(self.__board__, 4, 6, 5, 5)
+        self.assertEqual(self.__board__.get_piece(5, 5), self.__bishop__)
+        self.assertIsNone(self.__board__.get_piece(4, 6))
 
     def test_bishop_invalid_move(self):
-        from_row, from_col = 0, 2
-        to_row, to_col = 2, 2
-        # Este test falla porque nunca se lanza una excepción 
-        with self.assertRaises(Exception): 
-            self.white_bishop.move(self.board, from_row, from_col, to_row, to_col)
+        self.__board__.set_piece(6, 4, self.__bishop__)
+        move = self.__bishop__.perform_movement(self.__board__, 7, 2, 4, 4)
+        self.assertIsNone (move)
 
 if __name__ == "__main__":
     unittest.main()

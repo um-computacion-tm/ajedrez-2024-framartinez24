@@ -1,5 +1,9 @@
 from game.chess import Chess
+#from game.board import Board
+from game.exceptions import InvalidMove #,InvalidTurn
+
 def main():
+    print("Welcome to PythonChess")
     chess = Chess()
     while chess.is_playing():
         play(chess)
@@ -16,10 +20,13 @@ def play(chess):
             from_row,
             from_col,
             to_row,
-            to_col,
-        )
+            to_col)
+        give_up(chess)
+        
+    except InvalidMove as e:
+        print(e)
     except Exception as e:
-        print("error", e)
+        print("Error:", e)
 
 def give_up(chess):
     answer = input("Player " + chess.turn + "Giving up ah? (y/n)").lower()

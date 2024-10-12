@@ -1,7 +1,7 @@
 class Piece:
     def __init__(self, color, piece_type):
         self.__color__ = color
-        self.__piece__type = piece_type
+        self.__piece_type__ = piece_type
 
     def get_color(self):
         return self.__color__

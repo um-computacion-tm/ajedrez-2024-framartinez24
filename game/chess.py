@@ -1,23 +1,27 @@
 from game.board import Board
-
+from game.exceptions import InvalidMove, InvalidTurn, EmptyPosition
+from game.king import King
 
 class Chess:
     def __init__(self):
         self.__board__ = Board()
         self.__turn__ = "WHITE"
+        self.playing = True
+        self.winner = None
 
     def is_playing(self): 
-        return True
+        return self.playing
 
-    def move(self, 
-            from_row, 
-            from_col, 
-            to_row, 
-            to_col):
+    def move(self, from_row,
+             from_col,
+             to_row,
+             to_col):
         piece = self.__board__.get_piece(from_row, from_col)
-        if piece:
-            piece.move(self.__board__, from_row, from_col, to_row, to_col)
-            self.change_turn()
+        if not piece:
+            raise EmptyPosition()
+        if not piece.get_color() == self.__turn__:
+            raise InvalidTurn()
+        piece_took = self.__board__.perform_movement(from_row, from_col, to_row, to_col)
 
     @property
     def turn(self):
@@ -38,4 +42,13 @@ class Chess:
        else:
            raise ValueError("Must be white or black!")
 
+    def view_king(self):
+        white_king_found = any(isinstance(self.__board__.get_piece(row, col), King) and self.__board__.get_piece(row, col).get_color() == "WHITE" for row in range(8) for col in range(8))
 
+        black_king_found = any(isinstance(self.__board__.get_piece(row, col), King) and self.__board__.get_piece(row, col).get_color() == "BLACK" for row in range(8) for col in range(8))
+        if not white_king_found:
+            self.winner = "BLACK"
+            self.end_game()
+        elif not black_king_found:
+            self.winner = "WHITE"
+            self.end_game()

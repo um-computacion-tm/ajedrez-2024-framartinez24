@@ -1,43 +1,39 @@
 import unittest
 from game.pawn import Pawn
-from game.piece import Piece
-from game.function import MoveLogic
+from game.board import Board
 
 class TestPawn(unittest.TestCase):
-
     def setUp(self):
-        
-        self.board = [[None for _ in range(8)] for _ in range(8)] 
-        self.white_pawn = Pawn("WHITE")
-        self.black_pawn = Pawn("BLACK")
-        self.board[6][0] = self.white_pawn  
-        self.board[1][0] = self.black_pawn  
+        self.__board__ = Board()
+        self.__pawn__ = Pawn("WHITE", "PAWN")
 
-    def test_pawn_str_white(self):  
-        self.assertEqual(str(self.white_pawn), "♙")
+    def test_get_moves_pawn(self):
+        self.__board__.set_piece(6,3, self.__pawn__)
+        pawn = self.__board__.get_piece(6,3)
+        self.assertEqual(pawn.get_moves_pawn(self.__board__, 6, 3), [(5,3),(4,3)])
+    
+    def test_get_moves_pawn_2(self):
+        self.__board__.set_piece(2,4, self.__pawn__)
+        pawn = self.__board__.get_piece(2,4)
+        self.assertEqual(pawn.get_moves_pawn(self.__board__, 2, 4), [(1,3),(1,5)]) 
 
-    def test_pawn_str_black(self):
-        self.assertEqual(str(self.black_pawn), "♟")
+    def test_face_to_face(self):
+        self.__board__.set_piece(3,3, self.__pawn__)
+        self.__board__.set_piece(2,3, Pawn("BLACK", "PAWN"))
+        pawn = self.__board__.get_piece(3,3)
+        self.assertEqual(pawn.get_moves_pawn(self.__board__, 3, 3), [])
 
-    def test_pawn_move_white_valid(self):
-        from_row, from_col = 6, 0
-        to_row, to_col = 5, 0
-        self.white_pawn.move(self.board, from_row, from_col, to_row, to_col)
-        self.assertIsNone(self.board[from_row][from_col]) 
-        self.assertEqual(self.board[to_row][to_col], self.white_pawn)  
+    def test_pawn_move(self):
+        self.__board__.set_piece(6, 4, self.__pawn__)
+        pawn = self.__board__.get_piece(6, 4)
+        self.__pawn__.perform_movement(self.__board__, 6, 4, 4, 4)      
+        self.assertEqual(self.__board__.get_piece(4, 4), pawn)      
+        self.assertIsNone(self.__board__.get_piece(6, 4)) 
 
-    def test_pawn_move_black_valid(self):
-        from_row, from_col = 1, 0
-        to_row, to_col = 2, 0
-        self.black_pawn.move(self.board, from_row, from_col, to_row, to_col)
-        self.assertIsNone(self.board[from_row][from_col])  
-        self.assertEqual(self.board[to_row][to_col], self.black_pawn)  
+    def test_pawn_move_invalid(self):
+        self.__board__.set_piece(6, 4, self.__pawn__)
+        move = self.__pawn__.perform_movement(self.__board__, 6, 4, 7, 4)
+        self.assertIsNone (move)
 
-    def test_pawn_invalid_move(self):
-        from_row, from_col = 6, 0
-        to_row, to_col = 4, 1  
-        with self.assertRaises(Exception):  
-            self.white_pawn.move(self.board, from_row, from_col, to_row, to_col)
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

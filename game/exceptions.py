@@ -4,7 +4,7 @@ class InvalidMove(Exception):
         return self.message
 
 class InvalidTurn(InvalidMove):
-    message = "Can´t move another player piece"
+    message = "Can't move another player piece"
 
 class EmptyPosition(InvalidMove):
     message = "Empty position"

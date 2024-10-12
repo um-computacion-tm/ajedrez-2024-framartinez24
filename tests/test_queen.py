@@ -8,11 +8,9 @@ class TestQueen(unittest.TestCase):
         self.__board__ = Board()
         self.__queen__ = Queen("WHITE", "QUEEN")
 
-
     def test_move_queen_exception(self):
         self.__board__.set_piece(6, 4, self.__queen__)
         move = self.__queen__.perform_movement(self.__board__, 6, 4, 7, 4)
-
         self.assertIsNone (move)
 
     def test_move_queen_a(self):
