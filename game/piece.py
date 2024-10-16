@@ -3,6 +3,9 @@ class Piece:
         self.__color__ = color
         self.__piece_type__ = piece_type
 
+    def __str__(self):
+        return self.white_str if self.__color__ == "WHITE" else self.black_str
+
     def get_color(self):
         return self.__color__
     

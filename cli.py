@@ -1,6 +1,5 @@
 from game.chess import Chess
-#from game.board import Board
-from game.exceptions import InvalidMove #,InvalidTurn
+from game.exceptions import InvalidMove 
 
 def main():
     print("Welcome to PythonChess")

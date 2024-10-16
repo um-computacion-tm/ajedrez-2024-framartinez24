@@ -53,7 +53,7 @@ class Board:
                 if cell is not None:
                     board_str += str(cell) + " " 
                 else:
-                    board_str += " "  
+                    board_str += ". "  
             board_str += str(i) + "\n"  
         board_str += "  0 1 2 3 4 5 6 7\n"  
         return board_str
@@ -70,7 +70,7 @@ class Board:
     def remove_piece(self, row, col): # remove_piece(row, col): Removes the piece at the specified row and column.
         self.__positions__[row][col] = None
     
-    def perfom_move(self, from_row, from_col, to_row, to_col):
+    def perform_movement(self, from_row, from_col, to_row, to_col):
         piece = self.get_piece(from_row, from_col)
         if piece is None:
             raise ValueError("Missing piece")
