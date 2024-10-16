@@ -99,4 +99,7 @@
 - Board.py, chess.py, cli.py must be entirely re-writen, function.py will be removed asap.
 
 
-voy a escribir acá como evidencia de que no estoy loco, ayer hice board y lo pushie pero ahora desde otra pc hago el pull y no aparece, pero en la otra computadora me dice working tree clean, no sé si estaré perdiendo la batalla contra la sanidad, voy a pushear pawn y board lo buscaré mañana en la otra pc porque no pienso rehacerlo. 
+## [0.1] - 15|10|2024 
+### Modified 
+All code has been modified, comments from old and obsolete code have been removed, configuration files have been modified, and the testing percentage has been improved.
+Game now is operative and playable.
