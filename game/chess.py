@@ -27,6 +27,9 @@ class Chess:
         if not self.winner:
             self.change_turn()
 
+    def end_game(self):
+        self.playing = False  
+        print(f"Winner: {self.winner}")
 
     def view_king(self):
         white_king_found = any(isinstance(self.__board__.get_piece(row, col), King) and self.__board__.get_piece(row, col).get_color() == "WHITE" for row in range(8) for col in range(8))
