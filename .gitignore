@@ -1,2 +1,7 @@
 __pycache__/
+<<<<<<< HEAD
 .coverage
+ajedrez-env/
+=======
+.coverage
+>>>>>>> main
