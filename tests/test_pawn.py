@@ -26,7 +26,7 @@ class TestPawn(unittest.TestCase):
     def test_pawn_move(self):
         self.__board__.set_piece(6, 4, self.__pawn__)
         pawn = self.__board__.get_piece(6, 4)
-        self.__pawn__.pawn_move(self.__board__, 6, 4, 4, 4)      
+        self.__pawn__.perform_movement(self.__board__, 6, 4, 4, 4)      
         self.assertEqual(self.__board__.get_piece(4, 4), pawn)      
         self.assertIsNone(self.__board__.get_piece(6, 4)) 
 
