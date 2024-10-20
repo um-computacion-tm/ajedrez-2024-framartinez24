@@ -1,7 +1,11 @@
 [run]
+<<<<<<< HEAD
 source = 
     game
     tests
+=======
+source = main
+>>>>>>> main
 omit =
     venv/*
     */test/*
@@ -16,4 +20,8 @@ exclude_lines =
     print
     if __name__ == "__main__":
     def suite
+<<<<<<< HEAD
     __str__
+=======
+    __str__
+>>>>>>> main
